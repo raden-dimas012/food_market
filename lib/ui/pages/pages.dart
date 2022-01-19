@@ -28,7 +28,7 @@ part 'sign_up_page.dart';
 part 'address_page.dart';
 part 'food_page.dart';
 part 'food_details_page.dart';
-// part 'payment_page.dart';
+part 'payment_page.dart';
 // part 'illustration_page.dart';
 // part 'succes_order_page.dart';
 // part 'succes_sign_up_page.dart';

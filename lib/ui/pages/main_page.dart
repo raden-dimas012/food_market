@@ -1,6 +1,5 @@
 part of 'pages.dart';
 
-
 class MainPage extends StatefulWidget {
   final int initialPage;
 
@@ -42,27 +41,26 @@ class _MainPageState extends State<MainPage> {
               });
             },
             // children: [
-              // Center(
-              //   child: FoodPage(),
-              // ),
+            // Center(
+            //   child: FoodPage(),
+            // ),
             //   Center(child: OrderHistoryPage()),
             //   const Center(
             //     child: Text("Profile"),
             //   ),
             // ],
           )),
-          // Align(
-          //   alignment: Alignment.bottomCenter,
-          //   child: CustomButtomNavBar(
-          //     selectedIndex: selectedPage,
-          //     onTap: (index) {
-          //       setState(() {
-          //         selectedPage = index;
-          //       });
-          //       pageController.jumpToPage(selectedPage);
-          //     },
-          //   ),
-          // )
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: CustomBottomNavbar(
+                selectedIndex: selectedPage,
+                onTap: (index) {
+                  setState(() {
+                    selectedPage = index;
+                  });
+                  pageController.jumpToPage(selectedPage);
+                }),
+          )
         ],
       ),
     );
