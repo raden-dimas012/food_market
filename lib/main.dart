@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       ],
       child: const GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: MainPage(),
+        home:MainPage(),
       ),
     );
   }

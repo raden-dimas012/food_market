@@ -63,7 +63,7 @@ class UserServices {
       ApiReturnValue<String> result = await uploadProfilePicture(pictureFile);
       if (result.value != null) {
         value = value.copyWith(
-            picturePath: "http://192.168.20.100:8000/storage/" + result.value!);
+            picturePath: "http://127.0.0.1:8000/storage/" + result.value!);
       }
     }
 

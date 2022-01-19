@@ -1,24 +1,24 @@
 part of 'pages.dart';
 
 class MainPage extends StatefulWidget {
-  final int initialPage;
+  // final int initialPage;
 
-  const MainPage({Key? key, this.initialPage = 0}) : super(key: key);
+  const MainPage({Key? key}) : super(key: key);
 
   @override
   _MainPageState createState() => _MainPageState();
 }
 
 class _MainPageState extends State<MainPage> {
-  late int selectedPage;
-  late PageController pageController;
+  int selectedPage = 0;
+  PageController pageController = PageController(initialPage: 0);
 
-  @override
-  void initState() {
-    super.initState();
-    selectedPage = widget.initialPage;
-    pageController = PageController(initialPage: widget.initialPage);
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   selectedPage = widget.initialPage;
+  //   pageController = PageController(initialPage: widget.initialPage);
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -33,23 +33,44 @@ class _MainPageState extends State<MainPage> {
             color: 'FAFAFC'.toColor(),
           )),
           SafeArea(
-              child: PageView(
+          //     child: PageView(
+          //   controller: pageController,
+          //   onPageChanged: (index) {
+          //     setState(() {
+          //       selectedPage = index;
+          //     });
+          //   },
+          //   children: const [
+          //   Center(
+          //     child: FoodPage(),
+          //   ),
+          //     Center(child: OrderHistoryPage()),
+          //     Center(
+          //       child: Text("Profile"),
+          //     ),
+          //   ],
+          // )
+
+          child: PageView(
             controller: pageController,
-            onPageChanged: (index) {
+            onPageChanged: (index){
               setState(() {
                 selectedPage = index;
               });
             },
             children: const [
-            Center(
-              child: FoodPage(),
-            ),
-              Center(child: OrderHistoryPage()),
               Center(
-                child: Text("Profile"),
+                child: FoodPage()
+              ),
+              Center(
+                child: Text("Order")
+              ),
+              Center(
+                child: Text("Profile")
               ),
             ],
-          )),
+          )
+          ),
           Align(
             alignment: Alignment.bottomCenter,
             child: CustomBottomNavbar(

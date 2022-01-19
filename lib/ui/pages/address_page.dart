@@ -197,7 +197,7 @@ class _AddressPageState extends State<AddressPage> {
                           isLoading = false;
                         });
                       }
-                      // Get.to(const SignInPage());
+                      Get.to(const SignInPage());
                     },
                     style: TextButton.styleFrom(
                       elevation: 0,
