@@ -59,10 +59,10 @@ class User extends Equatable {
 
 User mockUser = const User(
     id: 1,
-    name: "Rico Taffarel Andi",
-    email: "ricotaffarel111@gmail.com",
-    address: "Pamayahan RT/RW 002/001 Kecamatan Lohbener Kabupaten Indramayu",
-    houseNumber: "002",
-    phoneNumber: "081766922219",
-    city: "Indramayu",
-    picturePath: "assets/ikhwan.jpg");
+    name: "Raden Dimas",
+    email: "dimascode012@gmail.com",
+    address: "JL Raden Wijaya RT 035 Kelurahan Thehok Kecamatan Jambi Selatan",
+    houseNumber: "162",
+    phoneNumber: "085158901216",
+    city: "Jambi",
+    picturePath: "assets/food-wishes.png");

@@ -40,15 +40,15 @@ class _MainPageState extends State<MainPage> {
                 selectedPage = index;
               });
             },
-            // children: [
-            // Center(
-            //   child: FoodPage(),
-            // ),
-            //   Center(child: OrderHistoryPage()),
-            //   const Center(
-            //     child: Text("Profile"),
-            //   ),
-            // ],
+            children: const [
+            Center(
+              child: FoodPage(),
+            ),
+              Center(child: OrderHistoryPage()),
+              Center(
+                child: Text("Profile"),
+              ),
+            ],
           )),
           Align(
             alignment: Alignment.bottomCenter,
