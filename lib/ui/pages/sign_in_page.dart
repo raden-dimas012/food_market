@@ -135,7 +135,7 @@ class _SignInPageState extends State<SignInPage> {
                   )
                 : TextButton(
                     onPressed: () {
-                      Get.to(const SignUpPage());
+                      // Get.to(const SignUpPage());
                     },
                     style: TextButton.styleFrom(
                       elevation: 0,
