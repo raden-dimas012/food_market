@@ -60,16 +60,8 @@ class _MainPageState extends State<MainPage> {
             },
             children: [
               const Center(child: FoodPage()),
-              Center(
-                  child: IllustrationPage(
-                      title: 'Ouch! Hungry',
-                      subtitle: "Seems you like have not\nordered any yet",
-                      picturePath: 'assets/love_burger.png',
-                      buttonTitle1: 'Finds Food',
-                      buttonOnTap1: () {},
-                      buttonOnTap2: () {},
-                      buttonTitle2: 'Oke',
-                      )),
+              const Center(
+                  child: OrderHistoryPage()),
               const Center(child: Text("Profile")),
             ],
           )),
