@@ -8,6 +8,7 @@ class FoodPage extends StatefulWidget {
 }
 
 class _FoodPageState extends State<FoodPage> {
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return ListView(
@@ -48,7 +49,7 @@ class _FoodPageState extends State<FoodPage> {
           ),
         ),
         // LIST OF FOOD
-        SizedBox (
+        SizedBox(
           height: 258,
           width: double.infinity,
           child: ListView(
@@ -66,9 +67,84 @@ class _FoodPageState extends State<FoodPage> {
                       .toList()),
             ],
           ),
-        )
+        ),
 
         // LIST OF FOOD TAB
+        Container(
+          width: double.infinity,
+          color: Colors.white,
+          child: Column(
+            children: [
+              CustomTabbar(
+                titles: const ['New Taste', 'Popular', 'Recommended'],
+                selectedIndex: selectedIndex,
+                ontap: (index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              Builder(builder: (_) {
+                String body = (selectedIndex == 0)
+                    ? 'New Taste Body'
+                    : (selectedIndex == 1)
+                        ? 'Popular Body'
+                        : 'Recomended Body';
+
+                        return Center(
+                          child: Text(
+                            body,
+                            style: blackFontStyle2,
+                          )
+                        );
+              }),
+              const SizedBox(
+                height: 80,
+              )
+              // BlocBuilder<FoodCubit, FoodState>(builder: (_, state) {
+              //   if (state is FoodLoaded) {
+              //     List<Food> foods = state.foods
+              //         .where((element) =>
+              //             element.types.contains((selectedIndex == 0)
+              //                 ? FoodType.newFood
+              //                 : (selectedIndex == 1)
+              //                     ? FoodType.popular
+              //                     : FoodType.recommended))
+              //         .toList();
+              //     return Column(
+              //       children: foods
+              //           .map((e) => GestureDetector(
+              //                 onTap: () {
+              //                   Get.to(FoodDetailsPage(
+              //                     transaction: Transaction(
+              //                         food: e,
+              //                         user: (context.read<UserCubit>().state
+              //                                 as UserLoaded)
+              //                             .user),
+              //                     onBackBottonPresed: () {
+              //                       Get.back();
+              //                     },
+              //                   ));
+              //                 },
+              //                 child: Padding(
+              //                   padding: const EdgeInsets.fromLTRB(
+              //                       defaultMargin, 0, defaultMargin, 16),
+              //                   child: FoodListItem(
+              //                       food: e, itemWidth: listItemWidth),
+              //                 ),
+              //               ))
+              //           .toList(),
+              //     );
+              //   } else {
+              //     return Center(child: loadingIndicator);
+              //   }
+              // })
+            ],
+          ),
+        ),
       ],
     );
   }
