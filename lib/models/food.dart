@@ -46,14 +46,14 @@ class Food extends Equatable {
       [id, picturePath, name, description, ingredients, price, rate];
 }
 
-Food mockFood = const Food(
-  id: 1, 
-  picturePath: "https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg", 
-  name: "Sate Sayur Sultan", 
-  description: "Sate Sayur Sultan adalah menu sate vegan paling terkenal di Bandung. Sate ini dibuat dari berbagai macam bahan bermutu tinggi. Semua bahan ditanam dengan menggunakan teknologi masa kini sehingga memiliki nutrisi yang kaya.", 
-  ingredients: "Bawang Merah, Paprika, Bawang Bombay, Timun", 
-  price: 150000, 
-  rate: 4.2);
+// Food mockFood = const Food(
+//   id: 1, 
+//   picturePath: "https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg", 
+//   name: "Sate Sayur Sultan", 
+//   description: "Sate Sayur Sultan adalah menu sate vegan paling terkenal di Bandung. Sate ini dibuat dari berbagai macam bahan bermutu tinggi. Semua bahan ditanam dengan menggunakan teknologi masa kini sehingga memiliki nutrisi yang kaya.", 
+//   ingredients: "Bawang Merah, Paprika, Bawang Bombay, Timun", 
+//   price: 150000, 
+//   rate: 4.2);
 
 List<Food> mockFoods = [
   const Food(

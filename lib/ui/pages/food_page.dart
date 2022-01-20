@@ -11,6 +11,8 @@ class _FoodPageState extends State<FoodPage> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    double listItemWidth =
+        MediaQuery.of(context).size.width - 2 * defaultMargin;
     return ListView(
       children: [
         // HEADER
@@ -88,22 +90,24 @@ class _FoodPageState extends State<FoodPage> {
                 height: 16,
               ),
               Builder(builder: (_) {
-                String body = (selectedIndex == 0)
-                    ? 'New Taste Body'
+                List<Food> foods = (selectedIndex == 0)
+                    ? mockFoods
                     : (selectedIndex == 1)
-                        ? 'Popular Body'
-                        : 'Recomended Body';
+                        ? []
+                        : [];
 
-                        return Center(
-                          child: Text(
-                            body,
-                            style: blackFontStyle2,
-                          )
-                        );
+                return Column(
+                  children: foods
+                      .map((e) => Padding(
+                            padding: const EdgeInsets.fromLTRB(
+                                defaultMargin, 0, defaultMargin, 16),
+                            child:
+                                FoodListItem(food: e, itemWidth: listItemWidth),
+                          ))
+                      .toList(),
+                );
               }),
-              const SizedBox(
-                height: 80,
-              )
+
               // BlocBuilder<FoodCubit, FoodState>(builder: (_, state) {
               //   if (state is FoodLoaded) {
               //     List<Food> foods = state.foods
@@ -145,6 +149,9 @@ class _FoodPageState extends State<FoodPage> {
             ],
           ),
         ),
+        const SizedBox(
+          height: 80,
+        ) 
       ],
     );
   }

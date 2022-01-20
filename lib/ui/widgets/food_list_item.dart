@@ -38,10 +38,10 @@ class FoodListItem extends StatelessWidget {
                 style: greyFontStyle.copyWith(fontSize: 13),
               )
             ],
-          ),
+          ), 
         ),
         RatingStars(
-          // rate: food.rate
+          rate: food.rate
           ),
       ],
     );
