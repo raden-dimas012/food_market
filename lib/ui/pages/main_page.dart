@@ -33,44 +33,43 @@ class _MainPageState extends State<MainPage> {
             color: 'FAFAFC'.toColor(),
           )),
           SafeArea(
-          //     child: PageView(
-          //   controller: pageController,
-          //   onPageChanged: (index) {
-          //     setState(() {
-          //       selectedPage = index;
-          //     });
-          //   },
-          //   children: const [
-          //   Center(
-          //     child: FoodPage(),
-          //   ),
-          //     Center(child: OrderHistoryPage()),
-          //     Center(
-          //       child: Text("Profile"),
-          //     ),
-          //   ],
-          // )
+              //     child: PageView(
+              //   controller: pageController,
+              //   onPageChanged: (index) {
+              //     setState(() {
+              //       selectedPage = index;
+              //     });
+              //   },
+              //   children: const [
+              //   Center(
+              //     child: FoodPage(),
+              //   ),
+              //     Center(child: OrderHistoryPage()),
+              //     Center(
+              //       child: Text("Profile"),
+              //     ),
+              //   ],
+              // )
 
-          child: PageView(
+              child: PageView(
             controller: pageController,
-            onPageChanged: (index){
+            onPageChanged: (index) {
               setState(() {
                 selectedPage = index;
               });
             },
-            children: const [
+            children: [
+              const Center(child: FoodPage()),
               Center(
-                child: FoodPage()
-              ),
-              Center(
-                child: Text("Order")
-              ),
-              Center(
-                child: Text("Profile")
-              ),
+                  child: IllustrationPage(
+                      title: 'Ouch! Hungry',
+                      subtitle: "Seems you like have not\nordered any yet",
+                      picturePath: 'assets/love_burger.png',
+                      buttonTitle1: 'Finds Food',
+                      buttonOnTap1: () {})),
+              const Center(child: Text("Profile")),
             ],
-          )
-          ),
+          )),
           Align(
             alignment: Alignment.bottomCenter,
             child: CustomBottomNavbar(

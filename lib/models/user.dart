@@ -61,7 +61,7 @@ User mockUser = const User(
     id: 1,
     name: "Raden Dimas",
     email: "dimascode012@gmail.com",
-    address: "JL Raden Wijaya RT 035 Kelurahan Thehok Kecamatan Jambi Selatan",
+    address: "JL Raden Wijaya",
     houseNumber: "162",
     phoneNumber: "085158901216",
     city: "Jambi",

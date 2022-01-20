@@ -23,13 +23,10 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => TransactionCubit()),
           BlocProvider(create: (context) => FoodCubit()),
         ],
-        child: GetMaterialApp(
+        child: const GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: FoodDetailsPage(
-            transaction: Transaction(
-              food: mockFoods[0],
-            ),
+          home: MainPage(),
           ),
-        ));
+        );
   }
 }
