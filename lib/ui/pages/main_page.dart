@@ -58,11 +58,10 @@ class _MainPageState extends State<MainPage> {
                 selectedPage = index;
               });
             },
-            children: [
-              const Center(child: FoodPage()),
-              const Center(
-                  child: OrderHistoryPage()),
-              const Center(child: Text("Profile")),
+            children: const [
+              Center(child: FoodPage()),
+              Center(child: OrderHistoryPage()),
+              Center(child: ProfilePage()),
             ],
           )),
           Align(

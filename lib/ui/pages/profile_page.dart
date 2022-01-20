@@ -36,28 +36,32 @@ class _ProfilePageState extends State<ProfilePage> {
                           image: DecorationImage(
                               image: AssetImage('assets/photo_border.png'))),
                       child: Container(
-                        decoration: BoxDecoration(
+                        decoration: const BoxDecoration(
                             shape: BoxShape.circle,
                             image: DecorationImage(
-                                image: NetworkImage((context
-                                        .read<UserCubit>()
-                                        .state as UserLoaded)
-                                    .user
-                                    .picturePath!),
+                                image: 
+                                AssetImage('assets/food_wishes.png'),
+                                // NetworkImage((context
+                                //         .read<UserCubit>()
+                                //         .state as UserLoaded)
+                                //     .user
+                                //     .picturePath!),
                                 fit: BoxFit.cover)),
                       ),
                     ),
                     Text(
-                      (context.read<UserCubit>().state as UserLoaded)
-                          .user
-                          .name!,
+                      'Raden Dimas',
+                      // (context.read<UserCubit>().state as UserLoaded)
+                      //     .user
+                      //     .name!,
                       style: GoogleFonts.poppins(
                           fontSize: 18, fontWeight: FontWeight.w500),
                     ),
                     Text(
-                      (context.read<UserCubit>().state as UserLoaded)
-                          .user
-                          .email!,
+                      'dimascode012@gmail.com',
+                      // (context.read<UserCubit>().state as UserLoaded)
+                      //     .user
+                      //     .email!,
                       style:
                           greyFontStyle.copyWith(fontWeight: FontWeight.w300),
                     )
