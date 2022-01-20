@@ -95,7 +95,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                                     height: 6,
                                   ),
                                   RatingStars(
-                                    rate: widget.transaction!.food!.rate,
+                                    // rate: widget.transaction!.food!.rate,
                                   )
                                 ],
                               ),

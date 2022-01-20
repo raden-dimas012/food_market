@@ -40,7 +40,9 @@ class FoodListItem extends StatelessWidget {
             ],
           ),
         ),
-        RatingStars(rate: food.rate),
+        RatingStars(
+          // rate: food.rate
+          ),
       ],
     );
   }
