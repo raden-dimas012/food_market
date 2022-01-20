@@ -43,13 +43,31 @@ class _FoodPageState extends State<FoodPage> {
                       image: const DecorationImage(
                           image: NetworkImage(
                               'https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg'),
-                              fit: BoxFit.cover
-                              ))),
+                          fit: BoxFit.cover))),
             ],
           ),
         ),
         // LIST OF FOOD
-        const FoodCard(),
+        SizedBox (
+          height: 258,
+          width: double.infinity,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              Row(
+                  children: mockFoods
+                      .map((e) => Padding(
+                            padding: EdgeInsets.only(
+                                left:
+                                    (e == mockFoods.first) ? defaultMargin : 0,
+                                right: defaultMargin),
+                            child: FoodCard(food: e),
+                          ))
+                      .toList()),
+            ],
+          ),
+        )
+
         // LIST OF FOOD TAB
       ],
     );
