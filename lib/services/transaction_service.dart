@@ -1,6 +1,6 @@
 part of 'services.dart';
 
-class TransactionServices {
+class TransactionService {
   static Future<ApiReturnValue<List<Transaction>>> getTransactions() async {
     await Future.delayed(const Duration(seconds: 3));
 

@@ -38,15 +38,19 @@ class _FoodPageState extends State<FoodPage> {
                   ),
                 ],
               ),
-              Container(
+              CachedNetworkImage(
+                imageUrl: (context.read<UserCubit>().state as UserLoaded)
+                    .user
+                    .picturePath!,
+                imageBuilder: (_, imageProv) => Container(
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(8),
-                      image: const DecorationImage(
-                          image: NetworkImage(
-                              'https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg'),
-                          fit: BoxFit.cover))),
+                    borderRadius: BorderRadius.circular(8),
+                    image: DecorationImage(image: imageProv, fit: BoxFit.cover),
+                  ),
+                ),
+              )
             ],
           ),
         ),
@@ -64,7 +68,20 @@ class _FoodPageState extends State<FoodPage> {
                                 left:
                                     (e == mockFoods.first) ? defaultMargin : 0,
                                 right: defaultMargin),
-                            child: FoodCard(food: e),
+                            child: GestureDetector(
+                                onTap: () {
+                                  Get.to(FoodDetailsPage(
+                                    transaction: Transaction(
+                                        food: e,
+                                        user: (context.read<UserCubit>().state
+                                                as UserLoaded)
+                                            .user),
+                                    onBackButtonPressed: () {
+                                      Get.back();
+                                    },
+                                  ));
+                                },
+                                child: FoodCard(food: e)),
                           ))
                       .toList()),
             ],
@@ -151,7 +168,7 @@ class _FoodPageState extends State<FoodPage> {
         ),
         const SizedBox(
           height: 80,
-        ) 
+        )
       ],
     );
   }

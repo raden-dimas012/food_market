@@ -65,4 +65,4 @@ User mockUser = const User(
     houseNumber: "162",
     phoneNumber: "085158901216",
     city: "Jambi",
-    picturePath: "assets/food_wishes.png");
+    picturePath: "https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg");
