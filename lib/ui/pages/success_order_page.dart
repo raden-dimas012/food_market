@@ -16,7 +16,7 @@ class SuccesOrderPage extends StatelessWidget {
         },
         buttonTitle1: "Order Other Foods",
         buttonOnTap2: () {
-          // Get.offAll(const MainPage(initialPage: 1,));
+          Get.offAll(const MainPage(initialPage: 1,));
         },
         buttonTitle2: "View My Order",
       ),
