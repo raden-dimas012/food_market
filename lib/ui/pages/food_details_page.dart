@@ -49,6 +49,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                         alignment: Alignment.centerLeft,
                         child: GestureDetector(
                           onTap: () {
+                            debugPrint("Clicked");
                             if (widget.onBackBottonPresed != null) {
                               widget.onBackBottonPresed!();
                             }
@@ -216,4 +217,6 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
     );
   }
 }
+
+
 
