@@ -102,7 +102,8 @@ class _FoodPageState extends State<FoodPage> {
                               ),
                             ],
                           )
-                        : Center(child: loadingIndicator))),
+                        : Center(child: loadingIndicator))
+                        ),
             //// LIST OF FOOD (TABS)
             Container(
               width: double.infinity,

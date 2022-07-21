@@ -9,5 +9,5 @@ part 'user_service.dart';
 part 'food_service.dart';
 part 'transaction_service.dart';
 
-String baseURL = 'http://127.0.0.1:8000/api';
-// String baseURL = 'http://foodmarket-backend.buildwithangga.id/api';
+// String baseURL = 'http://127.0.0.1:8000/api';
+String baseURL = 'http://foodmarket-backend.buildwithangga.id/api';

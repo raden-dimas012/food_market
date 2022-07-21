@@ -33,24 +33,7 @@ class _MainPageState extends State<MainPage> {
             color: 'FAFAFC'.toColor(),
           )),
           SafeArea(
-              //     child: PageView(
-              //   controller: pageController,
-              //   onPageChanged: (index) {
-              //     setState(() {
-              //       selectedPage = index;
-              //     });
-              //   },
-              //   children: const [
-              //   Center(
-              //     child: FoodPage(),
-              //   ),
-              //     Center(child: OrderHistoryPage()),
-              //     Center(
-              //       child: Text("Profile"),
-              //     ),
-              //   ],
-              // )
-
+  
               child: PageView(
             controller: pageController,
             onPageChanged: (index) {
