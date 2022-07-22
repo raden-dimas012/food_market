@@ -87,7 +87,7 @@ class _SignInPageState extends State<SignInPage> {
                       if (state is UserLoaded) {
                         context.read<FoodCubit>().getFoods();
                         context.read<TransactionCubit>().getTransactions();
-                        Get.to(const MainPage());
+                        Get.to(() => const MainPage());
                       } else {
                         Get.snackbar("", "",
                             backgroundColor: "ff0000".toColor(),
@@ -135,7 +135,7 @@ class _SignInPageState extends State<SignInPage> {
                   )
                 : TextButton(
                     onPressed: () {
-                      Get.to(const SignUpPage());
+                      Get.to(() => const SignUpPage());
                     },
                     style: TextButton.styleFrom(
                       elevation: 0,

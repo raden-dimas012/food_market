@@ -57,12 +57,12 @@ class User extends Equatable {
       [id, name, email, address, houseNumber, phoneNumber, city, picturePath];
 }
 
-User mockUser = const User(
-    id: 1,
-    name: "Raden Dimas",
-    email: "dimascode012@gmail.com",
-    address: "JL Raden Wijaya",
-    houseNumber: "162",
-    phoneNumber: "085158901216",
-    city: "Jambi",
-    picturePath: "https://i.pinimg.com/736x/06/7b/28/067b2879e5c9c42ec669bf639c3fbffc.jpg");
+// User mockUser = const User(
+//     id: 1,
+//     name: "Raden Dimas",
+//     email: "dimascode012@gmail.com",
+//     address: "JL Raden Wijaya",
+//     houseNumber: "162",
+//     phoneNumber: "085158901216",
+//     city: "Jambi",
+//     picturePath: "https://d1sag4ddilekf6.azureedge.net/compressed/merchants/6-C2T3JUJHTZJXJJ/hero/1508dbf2c0614aa484a1fa0538bae0cd_1622022529234257348.jpeg");

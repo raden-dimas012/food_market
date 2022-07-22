@@ -9,7 +9,7 @@ class IllustrationPage extends StatelessWidget {
   final Function buttonOnTap1;
   final Function? buttonOnTap2;
 
-  IllustrationPage(
+  const IllustrationPage(
       {Key? key,
       required this.title,
       required this.subtitle,

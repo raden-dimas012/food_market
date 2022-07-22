@@ -39,7 +39,8 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                       height: 100,
                       width: double.infinity,
                       margin: const EdgeInsets.only(bottom: defaultMargin),
-                      padding: const EdgeInsets.symmetric(horizontal: defaultMargin),
+                      padding:
+                          const EdgeInsets.symmetric(horizontal: defaultMargin),
                       color: Colors.white,
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
@@ -104,7 +105,9 @@ class _OrderHistoryPageState extends State<OrderHistoryPage> {
                                           onTap: () async {
                                             if (e.status ==
                                                 TransactionStatus.pending) {
-                                              await launch(e.paymentUrl.toString());
+                                              var uri =
+                                                  Uri.parse(e.paymentUrl!);
+                                              await launchUrl(uri);
                                             }
                                           },
                                           child: OrderListItem(

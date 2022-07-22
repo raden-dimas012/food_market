@@ -1,6 +1,5 @@
 part of 'pages.dart';
 
-
 class FoodPage extends StatefulWidget {
   const FoodPage({Key? key}) : super(key: key);
 
@@ -33,8 +32,12 @@ class _FoodPageState extends State<FoodPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        'Food Market',
-                        style: blackFontStyle1,
+                        'Welcome,',
+                        style: blackFontStyle1.copyWith(fontSize: 16),
+                      ),
+                      Text(
+                        'Pagikemalam Coffe and Eatery',
+                        style: blackFontStyle1.copyWith(fontSize: 16),
                       ),
                       Text(
                         "Let's get some foods",
@@ -81,17 +84,14 @@ class _FoodPageState extends State<FoodPage> {
                                         right: defaultMargin),
                                     child: GestureDetector(
                                       onTap: () {
-                                        Get.to(FoodDetailsPage(
-                                          transaction: Transaction(
-                                              food: e,
-                                              user: (context
-                                                      .read<UserCubit>()
-                                                      .state as UserLoaded)
-                                                  .user),
-                                          // onBackBottonPresed: () {
-                                          //   Get.back();
-                                          // },
-                                        ));
+                                        Get.to(() => FoodDetailsPage(
+                                              transaction: Transaction(
+                                                  food: e,
+                                                  user: (context
+                                                          .read<UserCubit>()
+                                                          .state as UserLoaded)
+                                                      .user),
+                                            ));
                                       },
                                       child: FoodCard(
                                         food: e,
@@ -102,8 +102,7 @@ class _FoodPageState extends State<FoodPage> {
                               ),
                             ],
                           )
-                        : Center(child: loadingIndicator))
-                        ),
+                        : Center(child: loadingIndicator))),
             //// LIST OF FOOD (TABS)
             Container(
               width: double.infinity,
@@ -136,15 +135,12 @@ class _FoodPageState extends State<FoodPage> {
                         children: foods
                             .map((e) => GestureDetector(
                                   onTap: () {
-                                    Get.to(FoodDetailsPage(
+                                    Get.to(() => FoodDetailsPage(
                                       transaction: Transaction(
                                           food: e,
                                           user: (context.read<UserCubit>().state
                                                   as UserLoaded)
                                               .user),
-                                      // onBackBottonPresed: () {
-                                      //   Get.back();
-                                      // },
                                     ));
                                   },
                                   child: Padding(

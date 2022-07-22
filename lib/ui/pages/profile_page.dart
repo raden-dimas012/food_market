@@ -70,7 +70,7 @@ class _ProfilePageState extends State<ProfilePage> {
               child: Column(
                 children: [
                   CustomTabbar(
-                    titles: const ["Account", "FoodMarket"],
+                    titles: const ["Account", "Pagikemalam"],
                     selectedIndex: selectedIndex,
                     ontap: (index) {
                       setState(() {

@@ -144,7 +144,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     User(
                         name: nameController.text, email: emailController.text),
                     passwordController.text,
-                    pictureFile!));
+                    pictureFile));
               },
               style: TextButton.styleFrom(
                 elevation: 0,

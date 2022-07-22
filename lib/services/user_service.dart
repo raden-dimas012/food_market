@@ -2,39 +2,27 @@ part of 'services.dart';
 
 class UserService {
 
-  static Future<ApiReturnValue<User>> signIn(String email,String password) async {
-    await Future.delayed(const Duration(milliseconds: 500));
+  static Future<ApiReturnValue<User>> signIn(String email,String password, {http.Client? client}) async {
+    client ??= http.Client(); 
 
-    return ApiReturnValue(value: mockUser);
-    // return ApiReturnValue(message: 'Wrong message or password');
+    String url = baseURL + '/login';
+    var uri = Uri.parse(url);
+    var response = await client.post(
+      uri,
+      headers: {"Content-Type": "application/json"},
+      body: jsonEncode(<String,String>{'email': email, 'password': password}));
+
+    if(response.statusCode != 200) {
+      return ApiReturnValue(message: "Please Try Again");
+    }
+
+    var data = jsonDecode(response.body);
+    User.token = data['data']['access_token'];
+    User value = User.fromJson(data['data']['user']);
+
+    return ApiReturnValue(value: value);
+    
   }
-
-  // static Future<ApiReturnValue<User>> signIn(String email, String password,
-  //     {http.Client? client}) async {
-
-  //   // await Future.delayed(const Duration(milliseconds: 500)); 
-  //   // return ApiReturnValue(value: mockUser, message: 'Wrong email or password');
-
-  //   client ??= http.Client();
-  //   String url = baseURL + '/login';
-  //   var uri = Uri.parse(url);
-
-  //   var response = await client.post(uri,
-  //       headers: {"Content-Type": "application/json"},
-  //       body:
-  //           jsonEncode(<String, String>{'email': email, 'password': password}));
-
-  //   if (response.statusCode != 200) {
-  //     return ApiReturnValue(message: 'Please try again');
-  //   }
-
-  //   var data = jsonDecode(response.body);
-
-  //   User.token = data['data']['access_token'];
-  //   User value = User.fromJson(data['data']['user']);
-
-  //   return ApiReturnValue(value: value);
-  // }
 
   static Future<ApiReturnValue<User>> signUp(User user, String password,
       {File? pictureFile, http.Client? client}) async {

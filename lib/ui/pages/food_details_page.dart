@@ -85,7 +85,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                                 children: [
                                   SizedBox(
                                     width: MediaQuery.of(context).size.width /
-                                        2, //(32 + 102),
+                                        2, 
                                     child: Text(widget.transaction!.food!.name,
                                         style: blackFontStyle2),
                                   ),
@@ -184,7 +184,7 @@ class _FoodDetailsPageState extends State<FoodDetailsPage> {
                                                 borderRadius:
                                                     BorderRadius.circular(8))),
                                         onPressed: () {
-                                          Get.to(PaymentPage(
+                                          Get.to(() => PaymentPage(
                                               transaction: widget.transaction!
                                                       .copyWith(
                                             quantity: quantity,
